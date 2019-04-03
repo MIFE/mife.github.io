@@ -4,8 +4,10 @@
   "description": "mife.github.io",
   "main": "index.js",
   "scripts": {
-    "deploy": "gh-pages -d dist",
-    "precommit": "lint-staged"
+    "deploy": "gh-pages -d jekyll/_site",
+    "standard": "lint-staged",
+    "stylelint": "stylelint --fix --config './.stylelintrc.js' './src/**/*.scss' './src/**/*.css'",
+    "precommit": "concurrently \"npm run stylelint\" \"npm run standard\""
   },
   "repository": {
     "type": "git",
@@ -39,11 +41,16 @@
   },
   "homepage": "https://github.com/MIFE/mife.github.io#readme",
   "devDependencies": {
-    "gh-pages": "^2.0.1",
     "babel-eslint": "^8.2.6",
+    "concurrently": "^4.1.0",
     "eslint": "^5.16.0",
+    "gh-pages": "^2.0.1",
     "husky": "^1.3.1",
     "lint-staged": "^8.1.5",
-    "standard": "^12.0.1"
+    "standard": "^12.0.1",
+    "stylelint": "^9.10.1",
+    "stylelint-config-recommended-scss": "^3.2.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-scss": "^3.5.4"
   }
 }

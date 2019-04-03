@@ -1,7 +1,7 @@
 # MIFE dotfiles
 
 # Output files
-dist/
+jekyll/_site
 
 # Editor generate files
 .idea/
