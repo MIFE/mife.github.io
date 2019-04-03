@@ -1,0 +1,49 @@
+{
+  "name": "mife.github.io",
+  "version": "1.0.0",
+  "description": "mife.github.io",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist",
+    "precommit": "lint-staged"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MIFE/mife.github.io.git"
+  },
+  "keywords": [
+    "mife",
+    "frontend"
+  ],
+  "author": "Cary Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MIFE/mife.github.io/issues"
+  },
+  "standard": {
+    "ignore": [
+      "node_modules/"
+    ],
+    "parser": "babel-eslint"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "standard --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
+  },
+  "homepage": "https://github.com/MIFE/mife.github.io#readme",
+  "devDependencies": {
+    "gh-pages": "^2.0.1",
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.16.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5",
+    "standard": "^12.0.1"
+  }
+}
